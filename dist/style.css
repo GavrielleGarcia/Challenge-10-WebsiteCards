@@ -1,0 +1,51 @@
+:root {    
+    --white: #FFFFFF;
+    --black: #4E4F4B;
+    --title: #5f08b0;
+    --manager: #0B3954;
+    --engineer: #b09709;
+    --productowner: #087E8B;
+    --director: #07e4fd;
+
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    background-color: var(--title);
+    color: var(--white);
+    text-align: center;
+    padding: 10px;  
+    margin-bottom: 50px;  
+}
+
+.shadowCard {
+    box-shadow: 2px 2px 5px var(--black);
+}
+
+.manager {
+    background-color: var(--manager);
+    color: var(--white);
+}
+.engineer {
+    background-color: var(--engineer);
+    color: var(--white);
+}
+
+.director {
+    background-color:  var(--director);
+    color: var(--black);
+}
+
+.productowner {
+    background-color:  var(--productowner);
+    color: var(--white);
+}
