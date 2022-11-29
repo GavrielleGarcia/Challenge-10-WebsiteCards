@@ -1,8 +1,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const Manager = require('./lib/director');
-const Engineer = require('./lib/engineer');
-const Intern= require('./lib/manager');
+const director = require('./lib/director');
+const engineer = require('./lib/engineer');
+const Manager= require('./lib/manager');
 const htmlGenerator = require('./src/htmlGenerator');
 
 const team = [];
@@ -14,7 +14,7 @@ const director = [
         name: 'name',
         validate: name => {
             if (!name){
-                return 'You should write a name';
+                return 'A name must me writen';
             } else {
                 return true;
             }            
@@ -66,7 +66,7 @@ const engineer = [
         name: 'name',
         validate: name => {
             if (!name){
-                return 'You should write an engineer\'s name';
+                return 'Write the engineer\'s name';
             } else {
                 return true;
             }
@@ -189,7 +189,7 @@ function addProductOwner() {
 
 // add a Manager
 function addManager() {
-    inquirer.prompt(intern)
+    inquirer.prompt(manager)
     .then((data) => {
         const employee = new Manager(data.name, data.employeeId, data. email, data.school);
         team.push(employee);
@@ -210,12 +210,12 @@ function createTeam() {
     writeToFile('team.html', content);
 };
 
-// allows add an engineer, manager, product owner or complete the team
+// add an engineer, manager, product owner or complete the department
 function addMember() {
     inquirer.prompt({
         type: 'list',
         message: 'Would you like to: ',        
-        choices: ['add an Engineer', 'add a Manager, Product Owner', 'complete team'],
+        choices: ['add an Engineer', 'add a Manager, Product Owner', 'complete department'],
         name: 'options',
     })
     .then((UserChoice) => {
@@ -229,7 +229,7 @@ function addMember() {
             case 'add a Manager':
                 addManager();
                 break;
-            case 'finish my team':
+            case 'finish':
                 createTeam();
                 break;
             default:
@@ -239,7 +239,7 @@ function addMember() {
 
 };
 
-// initialize with Director info
+// Director info
 function init() {
     inquirer.prompt(director)
     .then((data) => {
@@ -250,5 +250,4 @@ function init() {
 };
 
   
-// function to initialize app
 init();

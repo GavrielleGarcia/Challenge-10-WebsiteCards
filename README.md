@@ -1,37 +1,51 @@
 # Challenge-10-WebsiteCards
 
 ![badge](https://img.shields.io/badge/License-MIT-yellow)
-## Description
- This Cards Profile will help you visualize the employees by profile and filter by email or any other fields added.
-## Table of Content
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Test](#test)
-* [Questions](#questions)
-## Installation
-  To install the necessary dependencies, run the following command:
+## User Story
+
 ```bash
-npm init -y, npm install inquirer@8.2.4, npm i jest
+AS A Director
+I WANT to generate a webpage that displays my departmet basic info
+SO THAT I have quick access to their emails and GitHub profiles
 ```
-## Usage
- JavaScript, Node.js, jest
+## Description
+ The profile generator will help you create a new interactive data base for new employee for an existig position, or even create a new one. Also, filtering it our by categories with the given information.
+
+## Installation
+  Before anything, install the following dependencies to begin:
+```bash
+npm init -y
+npm install inquirer@8.2.4 
+npm i jest
+```
+
+Then you can start with the following commands:
+
+```bash
+npm i
+npm start
+```
+
+## Techonologies
+ - HTML
+ - CSS
+ - JavaScript
+ - Node.js
+ - Jest
+
 ## License
  Licensed under the [MIT](https://opensource.org/licenses/MIT)
  license.
-## Contributing 
-Open to any contribution
   
-  
-  There are some test you can run. To do so, please run the following command:
+## Testing 
+Run the following command:
 ```bash
 npm test
 ```
 
 
 
-## Questions
-  You can see more of my work on [gavriellegarcia](https://github.com/gavriellegarcia).
+## Contact
+My repositories: [gavriellegarcia](https://github.com/gavriellegarcia).
 
-  If you have any additional questions please don't hesitate to reach me on gavrielle.garcia@hotmail.com.   
+Send me an owl at: gavrielle.garcia@hotmail.com.   

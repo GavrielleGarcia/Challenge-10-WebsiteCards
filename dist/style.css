@@ -1,7 +1,7 @@
 :root {    
     --white: #FFFFFF;
     --black: #4E4F4B;
-    --title: #5f08b0;
+    --title: #b00864;
     --manager: #0B3954;
     --engineer: #b09709;
     --productowner: #087E8B;
@@ -11,8 +11,8 @@
 
 * {
     box-sizing: border-box;
-    margin: 0;
-}
+    margin: 2px;    
+    }
 
 .container {
     display: flex;
@@ -23,29 +23,36 @@ h1 {
     background-color: var(--title);
     color: var(--white);
     text-align: center;
-    padding: 10px;  
+    padding: 40px;  
     margin-bottom: 50px;  
+    opacity: 85%;
 }
 
-.shadowCard {
-    box-shadow: 2px 2px 5px var(--black);
-}
 
 .manager {
     background-color: var(--manager);
     color: var(--white);
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
 .engineer {
     background-color: var(--engineer);
     color: var(--white);
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
 
 .director {
     background-color:  var(--director);
     color: var(--black);
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+    
 }
 
 .productowner {
     background-color:  var(--productowner);
     color: var(--white);
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
 }
