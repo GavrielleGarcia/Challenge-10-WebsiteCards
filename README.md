@@ -22,8 +22,7 @@ npm i jest
 Then you can start with the following commands:
 
 ```bash
-npm i
-npm start
+node index.js
 ```
 
 ## Techonologies
@@ -32,6 +31,9 @@ npm start
  - JavaScript
  - Node.js
  - Jest
+
+## Overview
+ Watch video in the dist folder
 
 ## License
  Licensed under the [MIT](https://opensource.org/licenses/MIT)
