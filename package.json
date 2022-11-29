@@ -1,13 +1,13 @@
 {
   "name": "challenge-10-wedsite-cards",
   "version": "1.0.0",
-  "description": "",
+  "description": "![badge](https://img.shields.io/badge/License-MIT-yellow) ## User Story",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +15,13 @@
   "dependencies": {
     "inquirer": "^8.2.4",
     "jest": "^29.3.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GavrielleGarcia/Challenge-10-WebsiteCards.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GavrielleGarcia/Challenge-10-WebsiteCards/issues"
+  },
+  "homepage": "https://github.com/GavrielleGarcia/Challenge-10-WebsiteCards#readme"
 }

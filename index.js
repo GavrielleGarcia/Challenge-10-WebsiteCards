@@ -1,7 +1,8 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const director = require('./lib/director');
-const engineer = require('./lib/engineer');
+const Director = require('./lib/director');
+const Engineer = require('./lib/engineer');
+const ProductOwner = require('./lib/productowner');
 const Manager= require('./lib/manager');
 const htmlGenerator = require('./src/htmlGenerator');
 
@@ -111,6 +112,58 @@ const engineer = [
     }
 ];
 
+const productowner = [
+    {
+        type: 'input',
+        message: 'Product Owner\'s Name: ',
+        name: 'name',
+        validate: name => {
+            if (!name){
+                return 'Write the Product Owner\'s name';
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: 'Employee ID:',
+        name: 'employeeId',
+        validate: employeeId => {
+            if (isNaN(employeeId)){
+                return 'Please, enter a valid employee ID (numeric)';
+            } else {
+                return true;
+            }            
+        }
+    },
+    {
+        type: 'input',
+        message: 'Product Owner\'s email: ',
+        name: 'email',
+        validate: function(email){
+            validate = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+            if (!validate) {
+                return 'Please, enter a valid email';
+            } else {
+                return true;
+            }
+        }
+    },
+    {
+        type: 'input',
+        message: 'GitHub user name: ',
+        name: 'gitHub',
+        validate: gitHub => {
+            if (!gitHub){
+                return 'You should write a gitHub user name';
+            } else {
+                return true;
+            }
+        }
+    }
+];
+
 const manager = [
     {
         type: 'input',
@@ -179,7 +232,7 @@ function addEngineer() {
 function addProductOwner() {
     inquirer.prompt(productowner)
     .then((data) => {
-        const employee = new addProductOwner(data.name, data.employeeId, data. email, data.school);
+        const employee = new ProductOwner(data.name, data.employeeId, data.email, data.gitHub);
         team.push(employee);
         addMember();
     });
@@ -201,13 +254,13 @@ function addManager() {
 // create the html file
 function writeToFile(fileName, data) {
     fs.writeFile('./dist/' + fileName, data, (err) =>
-    err? console.log(err) : console.log("Your team.html file was successfully created!"));
+    err? console.log(err) : console.log("Your department.html file was successfully created!"));
 };
 
 // generate the html
 function createTeam() {
     let content = htmlGenerator(team);
-    writeToFile('team.html', content);
+    writeToFile('department.html', content);
 };
 
 // add an engineer, manager, product owner or complete the department
@@ -215,7 +268,7 @@ function addMember() {
     inquirer.prompt({
         type: 'list',
         message: 'Would you like to: ',        
-        choices: ['add an Engineer', 'add a Manager, Product Owner', 'complete department'],
+        choices: ['add an Engineer', 'add a Manager', 'Product Owner', 'complete department'],
         name: 'options',
     })
     .then((UserChoice) => {
@@ -223,7 +276,7 @@ function addMember() {
             case 'add an Engineer':
                 addEngineer();              
                 break;
-            case 'add an ProductOwner':
+            case 'add a ProductOwner':
                     addProductOwner();              
                     break;    
             case 'add a Manager':

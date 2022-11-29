@@ -1,6 +1,6 @@
 const Director = require('../lib/director');
 
-describe('director', () => {
+describe('manager', () => {
     it('test if we can get the Director role', () => {
         const value = 'Director';
         const emp = new Director('Gavs Garcia', '98252', 'ggarcia@ITcorpmail.com', '2727');
